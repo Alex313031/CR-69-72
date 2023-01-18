@@ -123,7 +123,8 @@ config("compiler") {
       cflags += [
         "/O3",
         "-Xclang", "-O3",
-        "/arch:AVX",
+        "-mavx",
+        "-maes",
         "-Wno-unused-command-line-argument",
       ]
     }
