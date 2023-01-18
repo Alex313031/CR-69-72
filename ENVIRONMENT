@@ -3,6 +3,7 @@ export EDITOR=nano
 export VISUAL=nano
 
 export NINJA_SUMMARIZE_BUILD=1
+export NINJA_STATUS="[%r processes, %f/%t @ %o/s | %e sec. ] "
 export PATH=/home/alex/depot_tools:$PATH
 
 export DEPOT_TOOLS_UPDATE=0
