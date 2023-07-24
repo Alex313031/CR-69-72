@@ -10,7 +10,7 @@ declare_args() {
   enable_widevine = true
 }
 
-enable_widevine_cdm_host_verification = false
+enable_widevine_cdm_host_verification = true
 
 # Only bundle Widevine CDM in Google Chrome builds.
 should_bundle_widevine_cdm = true
