@@ -36,12 +36,12 @@ else
     export CR_SRC_DIR
 fi
 
-CR_VER="69.0.3497.128"
+CR_VER="71.0.3578.118"
 
 export CR_VER &&
 
 printf "\n"
-printf "${GRE}Current Thorium version is:${c0} ${underline}$CR_VER${c0}\n"
+printf "${GRE}Current Chromium version is:${c0} ${underline}$CR_VER${c0}\n"
 printf "\n"
 printf "${RED}NOTE: ${YEL}Checking out${CYA} tags/$CR_VER ${YEL}in ${CR_SRC_DIR}...${c0}\n"
 printf "\n"
@@ -58,7 +58,7 @@ gclient sync --with_branch_heads --with_tags -f -R -D &&
 gclient runhooks &&
 
 # Install all sysroots (i.e. for ARM64)
-build/linux/sysroot_scripts/install-sysroot.py --all &&
+#build/linux/sysroot_scripts/install-sysroot.py --all &&
 
 printf "\n"
 printf "${GRE}Chromium tree is checked out at tag: ${c0}$CR_VER\n"

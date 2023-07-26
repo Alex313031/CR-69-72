@@ -580,7 +580,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os, host_arch, parallel_jobs,
   else:
     configure_flags['Common'].extend([
         # --optflags doesn't append multiple entries, so set all at once.
-        '--optflags="-O3 -maes -march=znver1 -mtune=znver1 -blahblah"',
+        '--optflags="-O3 -maes -march=znver1 -mtune=znver1"',
         '--enable-decoder=theora,vp8',
         '--enable-parser=vp3,vp8',
     ])
