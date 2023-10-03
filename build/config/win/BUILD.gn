@@ -124,12 +124,9 @@ config("compiler") {
         "/O2",
         "/clang:-O3",
         "-Xclang", "-O3",
-        "-maes",
         "-mavx",
-        "-mavx2",
-        "-march=znver1",
-        "-mtune=znver1",
-        "/arch:AVX2",
+        "-maes",
+        "/arch:AVX",
         "-Wno-unused-command-line-argument",
       ]
     }

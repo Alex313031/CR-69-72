@@ -531,15 +531,15 @@ config("toolchain") {
       # Increase the initial stack size. The default is 1MB, this is 2MB. This
       # applies only to executables and shared libraries produced by V8 since
       # ldflags are not pushed to dependants.
-      cflags += [ "/arch:AVX2" ]
+      cflags += [ "/arch:AVX" ]
       ldflags += [ "/STACK:2097152" ]
     }
     if (is_posix || is_linux) {
       # Increase the initial stack size. The default is 1MB, this is 2MB. This
       # applies only to executables and shared libraries produced by V8 since
       # ldflags are not pushed to dependants.
-      cflags += [ "-O3 -march=znver1 -mtune=znver1" ]
-      ldflags += [ "-Wl,-O3 -march=znver1" ]
+      cflags += [ "-O3", "-mavx", "-maes" ]
+      ldflags += [ "-Wl,-O3", "-mavx", "-maes" ]
     }
   }
   if (is_android && v8_android_log_stdout) {
