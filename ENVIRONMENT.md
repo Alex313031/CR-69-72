@@ -13,4 +13,4 @@ export GYP_MSVS_HASH_3bc0ec615cf20ee342f3bc29bc991b5ad66d8d2c=548e1677e024860c1d
 alias gsync='gclient sync --with_branch_heads --with_tags -f -R -D'
 alias gclean='git clean -ffd'
 
-alias 69='git checkout tags/69.0.3497.100'
+alias 69='git checkout tags/69.0.3497.128'

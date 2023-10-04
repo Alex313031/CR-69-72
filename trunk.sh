@@ -53,13 +53,16 @@ cd ${CR_SRC_DIR} &&
 git checkout -f origin/main &&
 
 git clean -ffd &&
-git clean -ffd &&
 
 git rebase-update &&
 
 git fetch --tags &&
 
 gclient sync --with_branch_heads --with_tags -f -R -D &&
+
+git clean -ffd &&
+
+gclient runhooks &&
 
 printf "\n" &&
 printf "${GRE}Done! ${YEL}You can now run \'./VERSION.sh\'\n" &&

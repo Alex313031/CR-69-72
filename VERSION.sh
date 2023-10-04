@@ -36,7 +36,8 @@ else
     export CR_SRC_DIR
 fi
 
-CR_VER="71.0.3578.118"
+# CR_VER="71.0.3578.118"
+CR_VER="69.0.3497.128"
 
 export CR_VER &&
 
@@ -51,9 +52,10 @@ cd ${CR_SRC_DIR} &&
 git checkout -f tags/$CR_VER &&
 
 git clean -ffd &&
-git clean -ffd &&
 
 gclient sync --with_branch_heads --with_tags -f -R -D &&
+
+git clean -ffd &&
 
 gclient runhooks &&
 
