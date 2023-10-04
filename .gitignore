@@ -5,6 +5,7 @@ API_KEYS.txt
 *.snap
 *.AppImage
 *.zip
+!depot_tools.zip
 *.apk
 /release/
 mini_installer.exe
