@@ -243,7 +243,7 @@ def SetupWindowsCrossCompileToolchain(target_arch):
       '--ar=llvm-ar',
 
       # Separate from optflags because configure strips it from msvc builds...
-      '--extra-cflags=-O3',
+      '--extra-cflags=-O3 -mavx -maes',
   ]
 
   if target_arch == 'ia32':

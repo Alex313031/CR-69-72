@@ -629,7 +629,7 @@ config("compiler") {
     # Disable optimization for now because they increase binary size by too
     # much.
     if (use_lld && (is_android || (is_linux && !is_chromeos))) {
-      ldflags += [ "-Wl,--lto-O3", "-Wl,-mllvm,-import-instr-limit=100" ]
+      ldflags += [ "-Wl,--lto-O3", "-Wl,-mllvm,-import-instr-limit=30" ]
     }
 
     # TODO(pcc): Re-enable this flag on Android. This will require libc++ to be
@@ -1041,7 +1041,7 @@ config("compiler_cpu_abi") {
 # compiler bugs (or the combination of the two).
 config("compiler_codegen") {
   configs = []
-  cflags = [ "-O3", ]
+  cflags = []
   ldflags = []
 
   if (is_nacl) {
@@ -1887,7 +1887,7 @@ config("optimize") {
 
     # Favor size over speed, /O1 must be before the common flags. The GYP
     # build also specifies /Os and /GF but these are implied by /O1.
-    cflags = [ "/O2", "-Xclang", "-O3" ] + common_optimize_on_cflags + [ "/O3" ]
+    cflags = [ "/O2", "-Xclang", "-O3" ] + common_optimize_on_cflags + [ "/Oi" ]
   } else if (optimize_for_size && !is_nacl) {
     # Favor size over speed.
     # TODO(crbug.com/718650): Fix -Os in PNaCl compiler and remove the is_nacl
@@ -1908,7 +1908,7 @@ config("optimize_no_wpo") {
   if (is_win) {
     # Favor size over speed, /O1 must be before the common flags. The GYP
     # build also specifies /Os and /GF but these are implied by /O1.
-    cflags = [ "/O2", "-Xclang", "-O3" ] + common_optimize_on_cflags + [ "/O3" ]
+    cflags = [ "/O2", "-Xclang", "-O3" ] + common_optimize_on_cflags + [ "/Oi" ]
   } else if (optimize_for_size && !is_nacl) {
     # Favor size over speed.
     # TODO(crbug.com/718650): Fix -Os in PNaCl compiler and remove the is_nacl
