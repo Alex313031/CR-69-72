@@ -122,11 +122,9 @@ config("compiler") {
     if (current_cpu == "x86" || current_cpu == "x64") {
       cflags += [
         "/O2",
-        "/clang:-O3",
         "-Xclang", "-O3",
         "-mavx",
         "-maes",
-        "/arch:AVX",
         "-Wno-unused-command-line-argument",
       ]
     }
